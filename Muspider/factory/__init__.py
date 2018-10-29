@@ -5,6 +5,7 @@
 from setting import _DEBUG
 from factory.Output import output
 
+
 def redis_client():
     if _DEBUG:
         from factory.Client import RdsConnection

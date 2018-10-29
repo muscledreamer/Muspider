@@ -7,9 +7,10 @@ import requests
 import random
 import asyncio
 import aiohttp
-from conf import Agents, PROXIES_POOL
+from conf import Agents, PROXIES_POOL, LOG_PATH_REQUESTS
 from setting import YIELD_COUNT
 from aio import group, control_thread
+from factory import output
 
 # import socket  # together with your other imports
 #
@@ -23,6 +24,8 @@ asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 class Spider(object):
     def __init__(self, proxy=False):
         self.proxy = proxy
+        self.log = output(log_path=LOG_PATH_REQUESTS, log_format=3, logger_name="requests_log", console_output=True,
+                          log_level="INFO")
 
     def aio_spider(self, base_urls):
         if not base_urls:
@@ -51,7 +54,7 @@ class Spider(object):
             headers = {
                 "User-Agent": random.choice(Agents)
             }
-            print("Crawling --> {}".format(url_for_asyncio))
+            self.log.info("Crawling --> {}".format(url_for_asyncio))
             async with aiohttp.ClientSession() as session:
                 if self.proxy:
                     async with session.get(url_for_asyncio, headers=headers,
@@ -60,7 +63,7 @@ class Spider(object):
                 else:
                     async with session.get(url_for_asyncio, headers=headers) as response:
                         res = await response.read()
-                print('Crawl Over --> {}:[{}]'.format(response.url, response.status))
+                self.log.info('Crawl Over --> {}:[{}]'.format(response.url, response.status))
                 data = {"url": url_for_asyncio, "html": res}
                 result.append(data)
         return result

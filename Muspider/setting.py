@@ -17,6 +17,7 @@ place_config = {
         'REDIS_CLUSTER': True,
         'CONCURRENT_REQUESTS': 16,
         'YIELD_COUNT': 10,
+        'CONCURRENT_ITEMS': 20,
         'HBASE_ADDRESS_LIST': ['10.10.20.84', '10.10.20.85', '10.10.20.86', '10.10.20.87', '10.10.20.88'],
         'INFO_HBASE_ADDRESS_LIST': ['10.10.30.20', '10.10.30.21', '10.10.30.22', '10.10.30.24'],
         'FDFS_ADDRESS': 'http://10.10.20.21:8083/',
@@ -28,6 +29,7 @@ place_config = {
         'REDIS_CLUSTER': False,
         'CONCURRENT_REQUESTS': 16,
         'YIELD_COUNT': 10,
+        'CONCURRENT_ITEMS': 20,
         'HBASE_ADDRESS_LIST': ['192.168.120.81', '192.168.120.82', '192.168.120.83', '192.168.120.84',
                                '192.168.120.85'],
         'INFO_HBASE_ADDRESS_LIST': ['192.168.120.81', '192.168.120.82', '192.168.120.83', '192.168.120.84',
@@ -49,7 +51,7 @@ REDIS_CLUSTER = PLACE_CONFIG["REDIS_CLUSTER"]  # Redis 集群启动(勿动)
 FDFS_CLIENT = PLACE_CONFIG["FDFS_CLIENT"]
 TELNETCONSOLE_ENABLED = False  # Address already in use(勿动)
 YIELD_COUNT = PLACE_CONFIG["YIELD_COUNT"]
-
+CONCURRENT_ITEMS = PLACE_CONFIG["CONCURRENT_ITEMS"]
 
 # 组件初始化数目
 FDFS_NUM = 3

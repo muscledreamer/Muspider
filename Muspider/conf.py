@@ -149,9 +149,9 @@ HBASE_PORT = '9090'
 # LOGG_PATH_REDIRECTION = '/home/python/add_scrapy_log/redirection.logs'
 
 # 测试log地址
-LOGG_PATH_REQUESTS = 'logs/requests.logs'
-LOGG_PATH_PIPELINES = 'logs/pipelines.logs'
-LOGG_PATH_REDIRECTION = 'logs/redirection.logs'
+LOG_PATH_REQUESTS = 'logs/requests.logs'
+LOG_PATH_PIPELINES = 'logs/pipelines.logs'
+LOG_PATH_REDIRECTION = 'logs/redirection.logs'
 
 # 境外代理池
 # PROXIES_POOL = [

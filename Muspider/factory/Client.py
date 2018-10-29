@@ -97,6 +97,6 @@ if __name__ == "__main__":
     file_text = b"123"
     fdfs = FDfsConnection()
     # a = fdfs.save_buffer(file_text)
-    b = "group5/M00/0F/C5/wKh4WVvADBOASG0CAAAAA4i3nNI5043189"
+    b = "group5/M00/23/12/wKh4WVvWxQmAPm2fAAAAA4i3nNI3900341"
     c = fdfs.delete_file(b)
     print(c)
