@@ -61,5 +61,5 @@ def process_pool(list_, *, func=None):
 
 if __name__ == '__main__':
     a = ["asd", "bvc", "mnb", "kjh"]
-    b = split_(a, 5)
+    b = group(a, 5)
     print(b)

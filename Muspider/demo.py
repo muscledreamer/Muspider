@@ -2,7 +2,8 @@
 # @Email: jqian_bo@163.com
 # @Author: JingQian Bo
 # @Create Time: 2018/10/22-3:29 PM
-from aio import Spider, Pipelines, control_process
+from aio import Spider, control_process
+from pipelines import Pipelines
 from start_urls import StartUrls
 from setting import CONCURRENT_REQUESTS, CONCURRENT_ITEMS
 
