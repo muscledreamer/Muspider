@@ -5,14 +5,22 @@
 
 from aio import control_process
 
-kk = "abc"
-ll = "dfg"
-result = [(kk, ll)]
+# kk = "abc"
+# ll = "dfg"
+# result = [(kk, ll)]
+#
+#
+# def common_func(result):
+#     print(result)
+#     return result
+#
+#
+# control_process(result, func=common_func, process_count=1)
 
 
-def common_func(result):
-    print(result)
-    return result
+import requests
+
+a = lambda url: requests.get(url).content
 
 
-control_process(result, func=common_func, process_count=1)
+print(a("http://www.baidu.com"))

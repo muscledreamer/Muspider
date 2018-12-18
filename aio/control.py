@@ -45,7 +45,6 @@ def control_process(list_, *, func=None, process_count=5):
             for base_info in base_info_lists:
                 base_info_list = process_pool(base_info, func=func)
                 result += base_info_list
-    print(result)
     return result
 
 
@@ -58,8 +57,3 @@ def process_pool(list_, *, func=None):
                 result.append(link)
     return result
 
-
-if __name__ == '__main__':
-    a = ["asd", "bvc", "mnb", "kjh"]
-    b = group(a, 5)
-    print(b)
