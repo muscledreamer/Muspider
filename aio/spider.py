@@ -151,11 +151,11 @@ class Spider(object):
 if __name__ == '__main__':
     #
     spider = Spider(yield_count=10)
-    base_url = ["http://www.baidu.com" for _ in range(1000)]
-    r = lambda url: requests.get(url).content
+    base_url = ["http://www.baidu.com" for _ in range(100)]
+    r = lambda url: requests.get(url, timeout=3).content
     now = lambda: time.time()
     a = now()
-    result = spider.super_requests(r, base_url)
-    # result = spider.aio_spider(base_url)
+    # result = spider.super_requests(r, base_url)
+    result = spider.aio_spider(base_url)
     print(now() - a)
     print(len(result))
